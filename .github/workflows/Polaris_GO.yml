@@ -38,5 +38,4 @@ jobs:
       run: |
            export PATH=$PATH:$(pwd)/polaris_cli/$(ls ./polaris_cli)/bin
            # <groupname_reponame> is name of your project in Polaris
-           polaris capture
            polaris analyze -w
