@@ -9,7 +9,6 @@ capture:
   build:
     buildCommands:
     - shell: [make, -f, Makefile]
-    - shell: [go, build]
   fileSystem:
     ears:
       extensions: [ear]
