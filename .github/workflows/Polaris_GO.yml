@@ -1,10 +1,6 @@
 name: Polaris_GO_scan
 
-on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+on: [push]
 
 jobs:
   Job_1:
