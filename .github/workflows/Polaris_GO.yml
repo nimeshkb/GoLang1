@@ -38,6 +38,5 @@ jobs:
       run: |
            export PATH=$PATH:$(pwd)/polaris_cli/$(ls ./polaris_cli)/bin
            # <groupname_reponame> is name of your project in Polaris
-           polaris setup --project-name Nimesh/GoLang1
            polaris capture
            polaris analyze -w
