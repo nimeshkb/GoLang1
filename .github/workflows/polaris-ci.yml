@@ -25,19 +25,4 @@ jobs:
         continue-on-error: true
         uses: blackducksoftware/github-action@2.0.0
         with:
-          args: '--blackduck.url="${{ secrets.BLACKDUCK_URL}}" --blackduck.api.token="${{ secrets.BLACKDUCK_API_TOKEN}}" --detect.risk.report.pdf=true --detect.report.timeout=600 --logging.level.detect=TRACE --logging.level.com.synopsys.integration=DEBUG '
-      
-      - if: steps.blackduck.outcome == 'success' && steps.polaris.outcome == 'success'
-        name: Slack Notification Success
-        uses: rtCamp/action-slack-notify@v2.0.2
-        env:
-          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
-          SLACK_MESSAGE: 'Polaris and Blackduck Scan Successful'
-          SLACK_USERNAME: Build Admin
-      - if: steps.blackduck.outcome == 'failure'
-        name: Slack Notification Failure
-        uses: rtCamp/action-slack-notify@v2.0.2
-        env:
-          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
-          SLACK_MESSAGE: 'Polaris or Blackduck Scan Failed'
-          SLACK_USERNAME: Build Admin
+          args: '--blackduck.url="${{ secrets.BLACKDUCK_URL}}" --blackduck.api.token="${{ secrets.BLACKDUCK_API_TOKEN}}" --detect.risk.report.pdf=true --detect.report.timeout=600 --logging.level.detect=TRACE --logging.level.com.synopsys.integration=DEBUG'
